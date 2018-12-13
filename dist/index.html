@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Roster</title>
+    <title>recipe app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
@@ -13,11 +13,30 @@
     <div id="recipe-section">
         <input type="text" id="recipe-input" placeholder="Write Type of food..." />
         <input type="text" id="recipe-input" placeholder="Write Type of Ingredients..." />
-        <button onclick=getFood()>Search</button>
+        <button onclick=getFoodValue()>Search</button>
     </div>
+
+    <div id="results"></div>
+
+    <script id="recipe-template" type="text/x-handlebars-template">
+        {{#each foodData}}
+            <div class="recipe-box">
+                <a href="{{ href }}">{{ title }}</a>
+                <img src="{{ thumbnail }}">
+                <ul>
+                    {{#each ingredients}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}
+    </script>
+      
 
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
+
+    <script src="Renderer.js"></script>
     <script src="main.js"></script>
 </body>
 

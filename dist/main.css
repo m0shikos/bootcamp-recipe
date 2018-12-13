@@ -1,0 +1,14 @@
+body {
+    background-color: #d1ccc0;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
+}
+
+.recipe-box {
+    box-shadow: 1px 0px 2px 0px;
+    background-color: #ffda79;
+}
